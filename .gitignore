@@ -7,6 +7,7 @@
 /.tmp
 /bower_components
 .idea
+/public
 *.iml
 out
 gen
