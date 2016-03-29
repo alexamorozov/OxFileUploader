@@ -1,0 +1,33 @@
+
+
+
+      <div class="uploadBlock-container" ng-show="vm.result.length == 0">
+         <div ngf-drop ngf-select ng-model="vm.files" class="drop-box"
+              ngf-drag-over-class="'dragover'" ngf-multiple="true"
+              ngf-allow-dir="true"
+              accept="image/*,application/pdf"
+              ngf-pattern="'image/*'">
+            Загрузить
+         </div>
+         <div ngf-no-file-drop>Загрузка недоступна для вашего браузера</div>
+
+
+      </div>
+      
+      <md-card style="background-color: #fff;"
+               ng-hide="vm.result.length == 0"
+               ng-repeat="url in vm.result">
+         <md-card-title>
+            <md-card-title-text>
+               <span class="md-headline">Изображение {{$index + 1}}</span>
+               <span class="md-subhead"><a href="{{url}}">{{url}}</a></span>
+            </md-card-title-text>
+            <md-card-title-media>
+               <div class="md-media-lg"
+                    style="background:
+                    url('{{url}}') center / cover;">
+               </div>
+            </md-card-title-media>
+         </md-card-title>
+
+      </md-card>
